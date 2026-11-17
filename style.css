@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Roboto+Condensed:wght@400;500;700&display=swap');
+
+:root {
+    color-scheme: dark;
+    font-family: "Roboto Condensed", Arial, sans-serif;
+    background: #101318;
+    color: #fff;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    min-width: 320px;
+    min-height: 100vh;
+    margin: 0;
+    display: grid;
+    place-items: center;
+    padding: 32px 16px;
+    background:
+        radial-gradient(ellipse at center, #30363c 0, #181c21 52%, #101216 100%);
+}
+
+main {
+    width: min(100%, 520px);
+}
+
+.poster {
+    position: relative;
+    isolation: isolate;
+    width: 100%;
+    aspect-ratio: 2 / 3;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5.5% 7% 4%;
+    background: #171d23 url("images/creed%203%20image.jpg") center 43% / cover no-repeat;
+    box-shadow: 0 24px 70px rgb(0 0 0 / 55%);
+    text-align: center;
+}
+
+.poster::before {
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    content: "";
+    background:
+        linear-gradient(180deg, rgb(4 9 14 / 58%) 0%, transparent 25%, transparent 42%, rgb(6 10 14 / 48%) 61%, #070a0df2 100%),
+        linear-gradient(90deg, rgb(3 8 12 / 25%), transparent 50%, rgb(3 8 12 / 12%));
+}
+
+.actor-names {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    font-family: Oswald, Impact, sans-serif;
+    font-size: clamp(9px, 2.45vw, 15px);
+    line-height: 1.08;
+    letter-spacing: 0.075em;
+    text-shadow: 0 2px 6px #000;
+}
+
+.actor-names p {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+
+.first-name {
+    font-weight: 400;
+}
+
+.last-name {
+    font-weight: 700;
+}
+
+.movie-title {
+    margin-top: auto;
+    margin-bottom: 5.5%;
+    text-shadow: 0 3px 12px rgb(0 0 0 / 75%);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.18em;
+}
+
+.logo h1 {
+    margin: 0;
+    font-family: Oswald, Impact, sans-serif;
+    font-size: clamp(58px, 17vw, 106px);
+    font-weight: 700;
+    line-height: 0.95;
+    letter-spacing: -0.055em;
+}
+
+.title-number {
+    margin-left: 0.1em;
+    font-size: 0.48em;
+    letter-spacing: 0.02em;
+    vertical-align: 0.28em;
+}
+
+.red-bars {
+    width: clamp(9px, 2.8vw, 17px);
+    height: clamp(36px, 10.5vw, 65px);
+    flex: 0 0 auto;
+    background: repeating-linear-gradient(
+        to bottom,
+        #d21f2b 0 19%,
+        transparent 19% 27%
+    );
+    transform: skewY(-9deg);
+}
+
+.cinema-text,
+.release-month {
+    margin: 8px 0 0;
+    font-family: Oswald, Impact, sans-serif;
+    font-weight: 500;
+    letter-spacing: 0.34em;
+}
+
+.cinema-text {
+    font-size: clamp(11px, 3vw, 17px);
+}
+
+.release-month {
+    margin-top: 1px;
+    font-size: clamp(25px, 7vw, 40px);
+    line-height: 1;
+    letter-spacing: 0.2em;
+}
+
+.tagline {
+    margin: 0 0 4%;
+}
+
+.tagline h2 {
+    margin: 0;
+    font-family: Oswald, Impact, sans-serif;
+    font-size: clamp(12px, 3.2vw, 18px);
+    font-weight: 500;
+    letter-spacing: 0.09em;
+}
+
+.movie-credits {
+    width: 100%;
+    font-size: clamp(5px, 1.35vw, 7px);
+    font-weight: 500;
+    line-height: 1.35;
+    letter-spacing: 0.045em;
+    color: rgb(255 255 255 / 84%);
+}
+
+.movie-credits p {
+    margin: 0 0 3px;
+}
+
+.credit-separator {
+    padding: 0 0.4em;
+}
+
+.studio-names {
+    display: flex;
+    justify-content: center;
+    gap: 1.4em;
+    margin-top: 5px !important;
+    font-family: Oswald, Impact, sans-serif;
+    font-size: 1.45em;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+}
+
+@media (min-width: 600px) {
+    .poster {
+        padding-inline: 8%;
+    }
+}
+
+@media (max-width: 360px) {
+    body {
+        padding-inline: 10px;
+    }
+
+    .poster {
+        padding-inline: 5%;
+    }
+
+    .actor-names {
+        letter-spacing: 0.035em;
+    }
+
+    .movie-credits {
+        letter-spacing: 0;
+    }
+}
